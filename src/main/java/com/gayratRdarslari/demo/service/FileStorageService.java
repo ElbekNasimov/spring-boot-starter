@@ -94,9 +94,9 @@ public class FileStorageService {
 
     // deleted unusual files from db using schedule
     @Scheduled(cron = "0 0 0 * * *") // this meaning, this function run on everyday
-    public void deleteAllDraft(){
+    public void deleteAllDraft() {
         List<FileStorage> fileStorageList = fileStorageRepository.findAllByFileStorage(FileStorageStatus.DRAFT);
-        for (FileStorage fileStorage: fileStorageList){
+        for (FileStorage fileStorage : fileStorageList) {
             delete(fileStorage.getHashId());
         }
 
@@ -105,6 +105,4 @@ public class FileStorageService {
 //            delete(fileStorage.getHashId());
 //        });
     }
-
-
 }
