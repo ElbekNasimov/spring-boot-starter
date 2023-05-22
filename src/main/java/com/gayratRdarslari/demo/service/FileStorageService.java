@@ -92,17 +92,20 @@ public class FileStorageService {
     }
 
 
-    // deleted unusual files from db using schedule
-    @Scheduled(cron = "0 0 0 * * *") // this meaning, this function run on everyday
-    public void deleteAllDraft() {
-        List<FileStorage> fileStorageList = fileStorageRepository.findAllByFileStorage(FileStorageStatus.DRAFT);
-        for (FileStorage fileStorage : fileStorageList) {
-            delete(fileStorage.getHashId());
-        }
-
-        // or use with this lambda
+//    return error !!!
+//     deleted unusual files from db using schedule
+//    @Scheduled(cron = "0 0 0 * * *") // this meaning, this function run on everyday
+//    public void deleteAllDraft() {
+//        List<FileStorageStatus> fileStorageList = fileStorageRepository.findAllByStorageStatus(FileStorageStatus.DRAFT);
+//
+//        for (FileStorage fileStorage : fileStorageList) {
+//            delete(fileStorage.getHashId());
+//        }
+//
+////         or use with this lambda
 //        fileStorageList.forEach(fileStorage -> {
 //            delete(fileStorage.getHashId());
 //        });
-    }
+//    }
+
 }

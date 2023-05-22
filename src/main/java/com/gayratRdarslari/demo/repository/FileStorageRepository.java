@@ -9,8 +9,9 @@ import java.util.List;
 
 @Repository
 public interface FileStorageRepository extends JpaRepository<FileStorage, Long> {
-
     FileStorage findByHashId(String hashId);
 
-    List<FileStorage> findAllByFileStorage(FileStorageStatus fileStorageStatus);
+//    code return Error
+//    List<FileStorage> findAllByStorageStatus(FileStorageStatus fileStorageStatus);
+
 }
